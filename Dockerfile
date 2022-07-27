@@ -1,7 +1,7 @@
-FROM python:3.6.0
-# FROM python:3.6.9
+# FROM python:3.6.0
+FROM python:3.9
 
-LABEL maintainer "Amine Hadj-Youcef  <hadjyoucef.amine@gmail.com>"
+# LABEL maintainer "Amine Hadj-Youcef  <hadjyoucef.amine@gmail.com>"
 # If you have any comment : LinkedIn - https://www.linkedin.com/in/aminehy/
 
 # Copy local code to the container image.
@@ -12,7 +12,7 @@ COPY . ./
 
 # --------------- Install python packages using `pip` ---------------
 
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt \
+RUN pip install --upgrade pip && pip install --no-cache-dir --no-dependencies -r requirements.txt \
 	&& rm -rf requirements.txt
 
 # --------------- Configure Streamlit ---------------
